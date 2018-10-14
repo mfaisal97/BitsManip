@@ -4,6 +4,10 @@
 BitArray::BitArray(unsigned __int8 Capacity=1) : OctetNum(((Capacity > 0) && (Capacity < MAXOctets * 8)) ? (Capacity / 8 + (Capacity % 8 != 0 ? 1 : 0)) : MAXOctets)
 {
 	Data = new unsigned __int8[OctetNum];
+	for (__int8 i; i < OctetNum; i++) {
+		Data[i] = 0;
+	}
+
 	if (Data == NULL) {
 		exit(1);
 	}
@@ -30,8 +34,14 @@ void BitArray::changeOctetCapacity(unsigned __int8	 NewOctetNum)
 	else {
 		unsigned __int8	* NewData = new unsigned __int8[NewOctetNum];
 		if (NewData == NULL) exit(1);
-		for (int i = 0; i < NewOctetNum && i < OctetNum; i++) {
-			NewData[i] = Data[i];
+		for (int i = 0; i < NewOctetNum; i++) {
+			if (i < OctetNum) {
+				NewData[i] = Data[i];
+			}
+			else {
+				NewData[i] = 0;
+			}
+			
 		}
 		delete[] Data;
 		Data = NewData;
