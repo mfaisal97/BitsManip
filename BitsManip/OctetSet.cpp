@@ -1,6 +1,6 @@
 #include "pch.h"
 
-OctetSet::OctetSet(unsigned __int8 size = 1):Data(size)
+OctetSet::OctetSet():Data(1)
 {
 }
 

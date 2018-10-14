@@ -9,7 +9,7 @@ private:
 	BitArray Data;
 
 public:
-	OctetSet(unsigned __int8);
+	OctetSet();
 	~OctetSet();
 
 	void Insert(unsigned __int8 element);
