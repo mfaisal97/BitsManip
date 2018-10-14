@@ -22,6 +22,7 @@ public:
 
 	//getters
 	unsigned __int8	 getCapacity();
+	unsigned __int8	 getOctetNum();
 	bool getElement(unsigned __int8);
 	unsigned __int8	 GetOctetWithOctetInd(unsigned __int8);
 	

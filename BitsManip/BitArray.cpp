@@ -77,3 +77,8 @@ unsigned __int8 BitArray::getCapacity()
 {
 	return OctetNum * 8;
 }
+
+unsigned __int8 BitArray::getOctetNum()
+{
+	return OctetNum;
+}
