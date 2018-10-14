@@ -1,27 +1,26 @@
 #ifndef BIT_ARRAY
 #define BIT_ARRAY
 
-
 class BitArray {
 
 protected:
 	unsigned __int8	 * Data;
 	unsigned __int8	 OctetNum;
-	unsigned __int8 MAXOctets = 32;
+	const unsigned __int8 MAXOctets;
 
 public:
 
-	BitArray(unsigned __int8);
+	BitArray(int);
 	~BitArray();
 
 	//setters
-	void changeCapacity(unsigned __int8);
+	void changeCapacity(int);
 	void changeOctetCapacity(unsigned __int8);
 	void ChangeElement(unsigned __int8, bool);
 	void ChangeOctet(unsigned __int8, unsigned __int8);
 
 	//getters
-	unsigned __int8	 getCapacity();
+	int	 getCapacity();
 	unsigned __int8	 getOctetNum();
 	bool getElement(unsigned __int8);
 	unsigned __int8	 GetOctetWithOctetInd(unsigned __int8);

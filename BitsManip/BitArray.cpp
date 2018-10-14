@@ -1,9 +1,10 @@
 #include "pch.h"
 
-BitArray::BitArray(unsigned __int8 Capacity=1) : OctetNum(((Capacity > 0) && (Capacity < MAXOctets * 8)) ? (Capacity / 8 + (Capacity % 8 != 0 ? 1 : 0)) : MAXOctets)
+BitArray::BitArray(int Capacity=1) :  MAXOctets(32)
 {
+	OctetNum = ((Capacity > 0) && (Capacity < MAXOctets * 8)) ? (Capacity / 8 + ((Capacity % 8 != 0) ? 1 : 0)) : MAXOctets;
 	Data = new unsigned __int8[OctetNum];
-	for (__int8 i; i < OctetNum; i++) {
+	for (unsigned __int8 i = 0; i < OctetNum; i++) {
 		Data[i] = 0;
 	}
 
@@ -16,7 +17,7 @@ BitArray::~BitArray() {
 	delete[] Data;
 }
 
-void BitArray::changeCapacity(unsigned __int8	 Capacity)
+void BitArray::changeCapacity(int	 Capacity)
 {
 	changeOctetCapacity(((Capacity > 0) && (Capacity < MAXOctets * 8)) ? (Capacity / 8 + (Capacity % 8 != 0 ? 1 : 0)) : MAXOctets);
 }
@@ -72,7 +73,7 @@ unsigned __int8 BitArray::GetOctetWithOctetInd(unsigned __int8	 Octetind)
 	return Data[Octetind];
 }
 
-unsigned __int8 BitArray::getCapacity()
+int BitArray::getCapacity()
 {
 	return OctetNum * 8;
 }
