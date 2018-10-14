@@ -1,4 +1,4 @@
-#include "OctetSet.h"
+#include "pch.h"
 
 OctetSet::OctetSet(unsigned __int8 size = 1):Data(size)
 {

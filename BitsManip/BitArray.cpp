@@ -1,5 +1,4 @@
-#include "BitArray.h"
-#include <cstdlib>
+#include "pch.h"
 
 BitArray::BitArray(unsigned __int8 Capacity=1) : OctetNum(((Capacity > 0) && (Capacity < MAXOctets * 8)) ? (Capacity / 8 + (Capacity % 8 != 0 ? 1 : 0)) : MAXOctets)
 {
