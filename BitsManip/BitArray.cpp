@@ -13,6 +13,19 @@ BitArray::BitArray(int Capacity=1) :  MAXOctets(32)
 	}
 }
 
+BitArray::BitArray(const BitArray & original) :MAXOctets(32)
+{
+	OctetNum = original.OctetNum;
+	Data = new unsigned __int8[OctetNum];
+	for (unsigned __int8 i = 0; i < OctetNum; i++) {
+		Data[i] = original.Data[i];
+	}
+	if (Data == NULL) {
+		exit(1);
+	}
+}
+
+
 BitArray::~BitArray() {
 	delete[] Data;
 }

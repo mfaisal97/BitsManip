@@ -11,6 +11,7 @@ protected:
 public:
 
 	BitArray(int);
+	BitArray(const  BitArray &);
 	~BitArray();
 
 	//setters

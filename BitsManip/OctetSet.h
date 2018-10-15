@@ -10,6 +10,7 @@ private:
 
 public:
 	OctetSet();
+	OctetSet(const OctetSet & original);
 	~OctetSet();
 
 	void Insert(unsigned __int8 element);

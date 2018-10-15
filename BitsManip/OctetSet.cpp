@@ -4,6 +4,10 @@ OctetSet::OctetSet():Data(1)
 {
 }
 
+OctetSet::OctetSet(const OctetSet & original) : Data(original.Data)
+{
+}
+
 OctetSet::~OctetSet()
 {
 }
